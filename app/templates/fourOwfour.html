@@ -1,0 +1,32 @@
+{%extends "base.html"%}
+{%block content%}
+{%block script%}
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/popper.min.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/bootstrap.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/mdb.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/bootstrap-material-design.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/main.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+{%endblock%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body id="error">
+    <div class="container-fluid">
+        <div id="message" class="">
+            <img src="/static/images/404.gif" alt="">
+            <br>
+            <span id="type"></span>
+            <br>
+            <a href="/"><button class="btn btn-outline-danger" type="button" name="button">Go back</button></a>
+        </div>
+    </div>
+</body>
+</html>
+{%endblock%}

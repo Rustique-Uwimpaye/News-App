@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+{%macro  displayTonews(news_list)%}
+<div class="row">
+
+    {% for top_news in news_list%}
+    <div class="col-md-4">
+        <div class="card">
+            <div id="title" class="card-title">
+                {{top_news.source}}
+            </div>
+            <img src="{{top_news.urlToImage}}" alt="" class="img-responsive">
+            <div class="card-body">
+                {{top_news.description | truncate(150) }} <br><a class="btn btn-outline-info" target="_blank"
+                    href="{{top_news.url}}">Continue R..</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    {%endfor%}
+</div>
+
+{%endmacro%}
+{%macro  displaySources(source_list)%}
+{%for source in source_list%}
+<div id="source" class="col-md-3">
+    <!-- Card -->
+    <div class="card card-image top">
+
+        <!-- Content -->
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+                <h3 class="card-title pt-2"><strong>{{source.name}}</strong></h3>
+                <p>{{source.description}}</p>
+                <a href="/articles/{{source.id}}" class="btn btn-pink"><i class="fas fa-clone left"></i>See articles</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- Card -->
+
+</div>
+
+{%endfor%}
+{%endmacro%}
+{%macro  displayArticles(article_list)%}
+{%for article in article_list%}
+<div class="col-md-6">
+    <div class="card">
+        <h4 class="card-title">{{article.title}}</h4>
+        <div class="view overlay">
+            <img class="card-img-top" src="{{article.url}}" alt="{{article.title}}">
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{article.description}}</p>
+            <p>Date Published {{article.publishedAt}}</p>
+            <a class="btn btn-pink" href="{{article.urlToImage}}">Read more</a>
+        </div>
+    </div>
+</div>
+{%endfor%}
+{%endmacro%}

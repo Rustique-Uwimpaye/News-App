@@ -1,0 +1,17 @@
+{% extends "bootstrap/base.html"%}
+{%block navbar%}
+{%include 'navbar.html'%}
+{%endblock%}
+{%block content %}
+{%block styles%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-material-design.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.css')}}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<link rel="icon" href="/static/images/ic.png">
+{%endblock%}
+
+{%endblock%}
+{%block footer%}
+{% include "footer.html"%}
+{%endblock%}

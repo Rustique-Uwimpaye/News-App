@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{%import 'macros.html' as macro%}
+{% block content %}
+{%block script%}
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/popper.min.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/bootstrap.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/mdb.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/bootstrap-material-design.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/main.js')}}"></script>
+
+{%endblock%}
+
+<div id="head" class="bg">
+    <div class="overlay">
+        <br><br><br>
+        <h1>Global-News</h1>
+        <h1>Access latest news from All over the world</h1>
+        <p>Get up to date with the latest and trending news, Political news and Business news</p>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="col-md-12">
+
+        <h2>Latest Headlines</h2>
+        {{macro .displayTonews(latest_headline)}}
+
+    </div>
+    <h2>Top Sources</h2>
+    <div class="row">
+        {{macro.displaySources(sources)}}
+    </div>
+
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark pt-4">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"> Copyright © 2020 |
+        <a href="https://github.com/Rustique-Uwimpaye"> Rustique uwimpaye</a>
+    </div>
+
+</footer>
+<!-- Footer -->
+{%endblock%}
