@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/rustique/Desktop/Python/Flask/News-App/virtual"
+set -gx VIRTUAL_ENV "/home/rustique/Desktop/Python/Flask/News-App1/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

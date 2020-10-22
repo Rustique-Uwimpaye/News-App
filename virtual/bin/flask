@@ -1,4 +1,4 @@
-#!/home/rustique/Desktop/Python/Flask/News-App/virtual/bin/python
+#!/home/rustique/Desktop/Python/Flask/News-App1/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

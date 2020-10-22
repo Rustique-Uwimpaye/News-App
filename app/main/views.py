@@ -1,20 +1,20 @@
 from flask import render_template
 from . import main
-from ..requests import get_articles,get_sources
+from ..request import news,sources,get_articles,get_sources
 
 @main.route("/")
 def index():
-    
+    top_news=news("top-headlines")
+    print(top_news)
+    source=sources("sources")
     return render_template("index.html")
 
 @main.route("/articles/<name>")
 def body(name):
     bbc=get_articles("abc-news")
     abc=get_articles("abc-news-au")
-    aljazeera=get_articles("al-jazeera-english")
-    technical=get_articles("ars-technical")
+    aljezera=get_articles("al-jazeera-english")
+    technica=get_articles("ars-technica")
 
-    return render_template("articles.html",name=name,bbc_news=bbc,abc_news=abc,aljazeera_n=aljazeera,tech=technical)
+    return render_template("articles.html",name=name,bbc_news=bbc,abc_news=abc,aljezera_n=aljezera,tech=technica)
 
-def news(headlines):
- 
