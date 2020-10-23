@@ -15,6 +15,7 @@ def configure_request(app):
     
 def news(headlines):
     get_news_url=base_url.format(headlines,api_key)
+    
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data=url.read()
         get_news_response=json.loads(get_news_data)
@@ -88,7 +89,6 @@ def get_articles(name):
             at_result_list=article_response["articles"]
             at_results=process_articles(at_result_list)
     return at_results
-
 
 def process_articles(article_list):
     article_results=[]

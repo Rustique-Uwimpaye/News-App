@@ -7,7 +7,7 @@ def index():
     top_news=news("top-headlines")
     print(top_news)
     source=sources("sources")
-    return render_template("index.html")
+    return render_template("index.html", top_news=top_news,source=source )
 
 @main.route("/articles/<name>")
 def body(name):
